@@ -31,7 +31,7 @@ export class AppComponent {
   }
 
   save(): void {
-    localStorage.setItem('todo', JSON.stringify(this.todoItems))
-    localStorage.setItem('todoStatus', JSON.stringify(this.todoItemStatus))
+    localStorage.setItem('todo', JSON.stringify(this.todoItems));
+    localStorage.setItem('todoStatus', JSON.stringify(this.todoItemStatus));
   }
 }
