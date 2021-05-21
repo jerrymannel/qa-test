@@ -1,0 +1,29 @@
+<div class="todo p-2">
+
+  <h1 class="text-center">My Awesome Todo</h1>
+
+  <div class="d-flex flex-column">
+
+    <div class="input-group mt-3">
+      <input type="text" class="form-control" placeholder="Add itme" [(ngModel)]="todoItem">
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="add()">Add</button>
+    </div>
+
+    <div class="todo-items">
+      <p class="text-secondary text-center" *ngIf="todoItems.length < 1"> No itms added</p>
+      <div class="list-group-item" *ngFor="let todo of todoItems; let i = index"
+        [ngClass]="{'completed': todoItemStatus[i]}">
+        <span *ngIf="todoItemStatus[i]" class="me-2"><i class="bi bi-check2-circle"></i></span>
+        <span *ngIf="!todoItemStatus[i]" class="me-2"><i class="bi bi-circle"></i></span>
+        <span>{{todo}}</span>
+        <div class="d-flex flex-row gap-3 float-end">
+          <span class="fakeLink done" (click)="todoItemStatus[i] = !todoItemStatus[i]"><i
+              class="bi bi-check2"></i></span>
+          <span class="fakeLink text-secondary"><i class="bi bi-pencil"></i></span>
+          <span class="fakeLink text-danger" (click)="deleteItem(i)"><i class="bi bi-trash"></i></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

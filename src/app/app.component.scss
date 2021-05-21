@@ -1,0 +1,40 @@
+.fakeLink {
+  cursor: pointer;
+}
+
+// scss-docs-start color-functions
+// Tint a color: mix a color with white
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+  @return mix(black, $color, $weight);
+}
+
+$blue: #0d6efd;
+$green: #198754;
+
+.todo {
+
+  width: 500px;
+  margin: 2rem auto;
+
+  .todo-items {
+    margin-top: 2rem;
+  }
+
+  .completed {
+    background-color: tint-color($green, 80%);
+  }
+
+  .done {
+    padding: 0px 3px;
+
+    &:hover {
+      color: #0d6efd;
+      background-color: tint-color($blue, 80%);
+    }
+  }
+}
